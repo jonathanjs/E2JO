@@ -2,16 +2,137 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+        <title>Formateur - E2JO </title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 
+        viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️
+        </text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        
+        <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
+
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="{{ asset('assets/css/carousel.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
     </head>
-    <body>
+    <body class="container">
+      
+       
+      
+            <header class="row-cols-lg-2 row-cols-md-2 row-cols-xl-1 bg-dark text-light text-center py-5">
+                   
+                <div class="col">
+                    <img src="/images/logo-e2jo.png" alt="Logo E2JO" class="mb-4" style="max-width: 150px;">
+                    <h1 class="fw-bold">Bienvenue chez E2JO</h1>
+                    <p class="lead mt-3 mb-4">Votre partenaire pour la formation, l'innovation et la cybersécurité.</p>
+                </div>    
+                    
+                <div class="col">
+                        <a href="{{ path('app_login') }}" class="btn btn-outline-light btn-lg me-2">Connexion</a>
+                        <a href="{{ path('app_contact') }}" class="btn btn-light btn-lg text-primary">Nous contacter</a>
+                </div>
+        
+            </header>
+    
+      {# div class Menu #}
+       <div class="row bg-dark text-light">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">E2JO</a>
+                            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                   <a class="nav-link active" aria-current="page" href="{{ path('app_accueil') }}">Accueil</a>
+                                </li>
+                                <li class="nav-item">
+                                   <a class="nav-link" href="{{ path('app_formation') }}">Formateur</a>
+                                </li>
+                                 <li class="nav-item">
+                                   <a class="nav-link" href="{{ path('app_register') }}">Creer un compte</a>
+                                </li>
+                                    <li class="nav-item">
+                                   <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
+                                </li>
+                            
+                            </ul>
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                            </div>
+                        </div>
+                </nav>
+       </div>
+       {# Fin div class MENU #}
+
+        <div class="row mb-5 mt-2">  
         {% block body %}{% endblock %}
+        </div>
+
+
+
+
+        <footer class="row bg-dark text-light pt-5 pb-4">
+        <div class="container text-md-left">
+            <div class="row text-md-left">
+
+                <!-- Logo et description -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-primary">E2JO</h5>
+                    <p>
+                        E2JO est votre partenaire de confiance pour la formation professionnelle, le développement numérique et la cybersécurité.
+                    </p>
+                </div>
+
+                <!-- Liens rapides -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Liens utiles</h5>
+                    <p><a href="/" class="text-light" style="text-decoration: none;">Accueil</a></p>
+                    <p><a href="/formations" class="text-light" style="text-decoration: none;">Formations</a></p>
+                    <p><a href="/contact" class="text-light" style="text-decoration: none;">Contact</a></p>
+                    <p><a href="/mentions-legales" class="text-light" style="text-decoration: none;">Mentions légales</a></p>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Contact</h5>
+                    <p><i class="fas fa-home me-2"></i> 123 Rue Exemple, Paris, France</p>
+                    <p><i class="fas fa-envelope me-2"></i> contact@e2jo.fr</p>
+                    <p><i class="fas fa-phone me-2"></i> +33 1 23 45 67 89</p>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Suivez-nous</h5>
+                    <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" role="button"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" role="button"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" role="button"><i class="fab fa-google"></i></a>
+                    <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" role="button"><i class="fab fa-instagram"></i></a>
+                </div>
+
+            </div>
+
+            <hr class="mb-4">
+
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p>© 2025 E2JO - Tous droits réservés.</p>
+                </div>
+
+                <div class="col-md-5 col-lg-4">
+                    <p class="text-right">Conçu avec ❤️ par l'équipe E2JO</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/global.js"></script>    
     </body>
+
+    
 </html>

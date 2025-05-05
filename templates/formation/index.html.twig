@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}E2JO - FORMATION EN LIGNE{% endblock %}
+
+{% block body %}
+<div class="container py-5">
+    <h1 class="mb-4 text-center">Nos Formations</h1>
+
+    <p class="lead text-center mb-5">
+        Découvrez les formations professionnelles proposées par E2JO pour développer vos compétences et booster votre carrière.
+    </p>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Développement Web</h5>
+                    <p class="card-text">
+                        Apprenez à créer des sites web modernes avec HTML, CSS, JavaScript et PHP. Formations adaptées aux débutants et intermédiaires.
+                    </p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                    <a href="#" class="btn btn-primary w-100">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Cybersécurité</h5>
+                    <p class="card-text">
+                        Maîtrisez les bases de la sécurité informatique, la protection des données et la prévention des cyberattaques.
+                    </p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                    <a href="#" class="btn btn-primary w-100">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Gestion de projet</h5>
+                    <p class="card-text">
+                        Apprenez à gérer efficacement vos projets avec des méthodes agiles et des outils collaboratifs modernes.
+                    </p>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                    <a href="#" class="btn btn-primary w-100">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="/contact" class="btn btn-outline-primary btn-lg">Nous contacter pour plus d'informations</a>
+    </div>
+</div>
+
+{% endblock %}

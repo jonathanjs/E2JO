@@ -1,6 +1,10 @@
 twig:
     file_name_pattern: '*.twig'
+    form_themes : ['bootstrap_5_layout.html.twig']
 
-when@test:
-    twig:
-        strict_variables: true
+
+    # # Si tu es en mode de test (comme lors des tests ou des environnements de développement)
+    # when@test:
+    #     twig:
+    #         strict_variables: true  # Activer strict_variables en mode test
+
