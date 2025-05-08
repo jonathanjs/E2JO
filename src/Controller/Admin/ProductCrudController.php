@@ -38,7 +38,7 @@ class ProductCrudController extends AbstractCrudController
             TextField::new('name')->setLabel('Nom')->setHelp('Nom de la video'),
             SlugField::new('slug')->setTargetFieldName('name')->setlabel('URL')->setHelp('URL de votre video'),
             TextEditorField::new('description')->setlabel('Description')->setHelp('Description de votre video'),
-            ImageField::new('image')->setLabel('Image')->setHelp('Envoyer votre image 600*600px')->setUploadDir('/public/uploads/videoCours'),
+            ImageField::new('image')->setLabel('Image')->setHelp('Envoyer votre image 600*600px')->setUploadedFileNamePattern('[year]-[month]-[day]-[contenthash].[extension]')->setBasePath('/uploads')->setUploadDir('/public/uploads/videoCours'),
             NumberField::new('price')->setLabel('Prix H.T')->setHelp('Prix H.T de la video en ligne'),
             ChoiceField::new('Tva')->setLabel('Taux de TVA')->setChoices([
                 '5,5%'=>'5.5',
