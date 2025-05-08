@@ -1,20 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CompteController!{% endblock %}
+{% block title %}Compte utilisateur{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="container mt-4">
+  <div class="row">
+    
+    <!-- Colonne de gauche : Tableau vertical -->
+    <div class="col-md-4">
+      <h4 class="text-center mb-3">Espace membre</h4>
+      <table class="table table-bordered table-hover">
+        <tbody>
+          <tr>
+            <td>
+              <a href="{{ path('app_compte') }}" class="text-decoration-none">👤 Mon profil</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="" class="text-decoration-none">🔒 Modifier le mot de passe</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <form action="{{ path('app_logout') }}" method="post" class="m-0 p-0">
+       
+                <button type="submit" class="btn btn-link text-danger p-0 m-0 w-100 text-start">🚪 Se déconnecter</button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <!-- Colonne de droite : contenu -->
+    <div class="col-md-8">
+      <h4>Contenu principal</h4>
+      {{ form(form) }}
+    </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/Test/Documents/KandiezOffciel/src/Controller/CompteController.php</code></li>
-        <li>Your template at <code>C:/Users/Test/Documents/KandiezOffciel/templates/compte/index.html.twig</code></li>
-    </ul>
+  </div>
 </div>
 {% endblock %}
